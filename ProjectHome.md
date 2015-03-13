@@ -1,0 +1,1 @@
+PHP based editor for editing the EQEmu database. Compatible with PHP 4 and 5 and MySQL 4 and 5.
