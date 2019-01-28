@@ -73,12 +73,12 @@
                     </select>
                   </td>
                   <td align="left" width="25%">
-                    Expansion:<br>
-                    <select name="expansion">
-<?foreach($eqexpansions as $key=>$value):?>
-                      <option value="<?=$key?>"<?echo ($key == $expansion)? " selected" : "";?>> <?=$value?></option>
-<?endforeach;?>
-                    </select>
+                    Minimum Expansion:<br>
+                    <input type="text" name="min_expansion" size="7" value="<?=$min_expansion?>"></td>
+                  </td>
+                  <td align="left" width="25%">
+                    Maximum Expansion:<br>
+                    <input type="text" name="max_expansion" size="7" value="<?=$max_expansion?>"></td>
                   </td>
                 </tr>
               </table>
