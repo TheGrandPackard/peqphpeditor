@@ -45,6 +45,12 @@
               </td>
               <td align="left" width="25%">&nbsp;</td>
             </tr>
+            <tr>
+              <td align="left" width="25%">Min Expansion:<br/><input type="text" name="min_expansion" size="7" value="<?=$min_expansion?>"/></td>
+              <td align="left" width="25%">Max Expansion:<br/><input type="text" name="max_expansion" size="7" value="<?=$max_expansion?>"/></td>
+              <td align="left" width="25%">&nbsp;</td>
+              <td align="left" width="25%">&nbsp;</td>
+            </tr>
           </table>
         </fieldset><br/>
         <fieldset>

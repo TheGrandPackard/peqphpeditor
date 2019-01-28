@@ -22,6 +22,8 @@
           <td align="center" width="5%"><strong>count</strong></td>
           <td align="center" width="20%"><strong>theme</strong></td>
           <td align="center" width="10%"><strong>zone in</strong></td>
+          <td align="center" width="4%"><strong>min exp</strong></td>
+          <td align="center" width="4%"><strong>max exp</strong></td>
           <th width="5%"></th>
          </tr>
 <?$x=0; foreach($kill as $kill=>$v):?>
@@ -36,6 +38,8 @@
           <td align="center" width="5%"><?=$v['type_count']?></td>
           <td align="center" width="20%"><?=$themetype[$v['theme']]?></td>
           <td align="center" width="10%"><?=getZoneName($v['zone_in_zone_id'])?></td>
+          <td align="center" width="4%"><?=$v['min_expansion']?></td>
+          <td align="center" width="4%"><?=$v['max_expansion']?></td>
           <td align="right">      
             <a href="index.php?editor=adventures&z=<?=$currzone?>&zoneid=<?=$currzoneid?>&npcid=<?=$npcid?>&id=<?=$v['id']?>&action=8"><img src="images/edit2.gif" border="0" title="Edit Entry"></a> 
             <a onClick="return confirm('Really Delete Adventure <?=$v['id']?>?');" href="index.php?editor=adventures&z=<?=$currzone?>&zoneid=<?=$currzoneid?>&npcid=<?=$npcid?>&id=<?=$v['id']?>&action=7"><img src="images/remove3.gif" border="0" title="Delete this entry"></a>
