@@ -61,8 +61,8 @@
         </tr>
         <tr>
           <td width="33%">Zone: <?=$zone?></td>
-          <td width="33%">&nbsp;</td>
-          <td width="33%">&nbsp;</td>
+          <td width="33%">Minimum Expansion: <?=$min_expansion?></td>
+          <td width="33%">Maximum Expansion: <?=$max_expansion?></td>
         </tr>
       </table>
     </div>
