@@ -73,6 +73,8 @@
             <th>client bitmask</th>
             <th>no keyring</th>
             <th>disable timer</th>
+            <th>min expansion</th>
+            <th>max expan.</th>
           </tr>
           <tr>
             <td><input type="text" size="7" name="dest_instance" value="<?=$dest_instance?>"></td>
@@ -84,6 +86,8 @@
               </select>
             </td>
             <td><input type="text" size="7" name="disable_timer" value="<?=$disable_timer?>"></td>
+            <td><input type="text" size="7" name="min_expansion" value="<?=$min_expansion?>"></td>
+            <td><input type="text" size="7" name="max_expansion" value="<?=$max_expansion?>"></td>
           </tr>
         </table><br><br>
         <center>
