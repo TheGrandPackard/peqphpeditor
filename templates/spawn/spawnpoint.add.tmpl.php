@@ -67,6 +67,16 @@
               </select>
             </td>
           </tr>
+          <tr>
+            <td width="33%">
+              Min Expansion:<br>
+              <input type="text" name="min_expansion" value="0">
+            </td>
+            <td width="33%">
+              Max Expansion:<br>
+              <input type="text" name="max_expansion" value="99">
+            </td>
+          </tr>
         </table><br><br>
         <center>
           <input type="hidden" name="zone" value="<?=$zone?>">

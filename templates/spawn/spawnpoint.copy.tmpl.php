@@ -20,7 +20,9 @@
             <input type="hidden" name="cond_value" value="<?=$cond_value?>">
             <input type="hidden" name="version" value="<?=$version?>">
             <input type="hidden" name="enabled" value="<?=$enabled?>">
-	     <input type="hidden" name="animation" value="<?=$animation?>">
+	          <input type="hidden" name="animation" value="<?=$animation?>">
+            <input type="hidden" name="min_expansion" value="<?=$min_expansion?>">
+	          <input type="hidden" name="max_expansion" value="<?=$max_expansion?>">
         </center>
       </div>
     </div>
