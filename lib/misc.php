@@ -531,7 +531,7 @@ function get_fishing() {
   $zid = getZoneID($z);
   $array = array();
 
-  $query = "SELECT fishing.id, Itemid AS fiid, zoneid, skill_level, chance, npc_id, npc_chance, items.name AS name
+  $query = "SELECT fishing.id, Itemid AS fiid, zoneid, skill_level, chance, npc_id, npc_chance, items.name AS name, min_expansion, max_expansion
                 FROM fishing, items
                 WHERE fishing.zoneid=$zid
                 AND fishing.Itemid=items.id
@@ -540,7 +540,7 @@ function get_fishing() {
   $result = $mysql->query_mult_assoc($query);
   if ($result) {
     foreach ($result as $result) {
-      $array['fishing'][$result['id']] = array("fsid"=>$result['id'], "fiid"=>$result['fiid'], "zoneid"=>$result['zoneid'], "skill_level"=>$result['skill_level'], "chance"=>$result['chance'], "npc_id"=>$result['npc_id'], "npc_chance"=>$result['npc_chance'], "name"=>$result['name']);
+      $array['fishing'][$result['id']] = array("fsid"=>$result['id'], "fiid"=>$result['fiid'], "zoneid"=>$result['zoneid'], "skill_level"=>$result['skill_level'], "chance"=>$result['chance'], "npc_id"=>$result['npc_id'], "npc_chance"=>$result['npc_chance'], "name"=>$result['name'], "min_expansion"=>$result['min_expansion'], "max_expansion"=>$result['max_expansion']);
     }
   }
   return $array;
@@ -551,7 +551,7 @@ function get_forage() {
   $zid = getZoneID($z);
   $array = array();
 
-  $query = "SELECT forage.id, zoneid, Itemid AS fgiid, level, chance, items.name AS name
+  $query = "SELECT forage.id, zoneid, Itemid AS fgiid, level, chance, items.name AS name, min_expansion, max_expansion
                 FROM forage, items
                 WHERE forage.zoneid=$zid
                 AND forage.Itemid=items.id
@@ -560,7 +560,7 @@ function get_forage() {
   $result = $mysql->query_mult_assoc($query);
   if ($result) {
     foreach ($result as $result) {
-      $array['forage'][$result['id']] = array("fgid"=>$result['id'], "fgiid"=>$result['fgiid'], "zoneid"=>$result['zoneid'], "level"=>$result['level'], "chance"=>$result['chance'], "name"=>$result['name']);
+      $array['forage'][$result['id']] = array("fgid"=>$result['id'], "fgiid"=>$result['fgiid'], "zoneid"=>$result['zoneid'], "level"=>$result['level'], "chance"=>$result['chance'], "name"=>$result['name'], "min_expansion"=>$result['min_expansion'], "max_expansion"=>$result['max_expansion']);
     }
   }
   return $array;
@@ -576,7 +576,7 @@ function get_gspawn() {
   $zversion = $result['zversion'];
 
   if($zversion == 0) {
-    $query = "SELECT ground_spawns.id, zoneid, max_x, max_y, max_z, min_x, min_y, heading, max_allowed, respawn_timer, version, item AS giid, items.name AS name
+    $query = "SELECT ground_spawns.id, zoneid, max_x, max_y, max_z, min_x, min_y, heading, max_allowed, respawn_timer, version, item AS giid, items.name AS name, min_expansion, max_expansion
                 FROM ground_spawns, items
                 WHERE ground_spawns.zoneid=$zid
                 AND ground_spawns.item=items.id
@@ -585,12 +585,12 @@ function get_gspawn() {
     $result = $mysql->query_mult_assoc($query);
     if ($result) {
       foreach ($result as $result) {
-        $array['gspawn'][$result['id']] = array("gsid"=>$result['id'], "giid"=>$result['giid'], "zoneid"=>$result['zoneid'], "max_x"=>$result['max_x'], "max_y"=>$result['max_y'], "max_z"=>$result['max_z'], "min_x"=>$result['min_x'], "min_y"=>$result['min_y'], "heading"=>$result['heading'], "gname"=>$result['gname'], "max_allowed"=>$result['max_allowed'], "comment"=>$result['comment'], "respawn_timer"=>$result['respawn_timer'], "iname"=>$result['name'], "version"=>$result['version']);
+        $array['gspawn'][$result['id']] = array("gsid"=>$result['id'], "giid"=>$result['giid'], "zoneid"=>$result['zoneid'], "max_x"=>$result['max_x'], "max_y"=>$result['max_y'], "max_z"=>$result['max_z'], "min_x"=>$result['min_x'], "min_y"=>$result['min_y'], "heading"=>$result['heading'], "gname"=>$result['gname'], "max_allowed"=>$result['max_allowed'], "comment"=>$result['comment'], "respawn_timer"=>$result['respawn_timer'], "iname"=>$result['name'], "version"=>$result['version'], "min_expansion"=>$result['min_expansion'], "max_expansion"=>$result['max_expansion']);
       }
     }
   }
   elseif($zversion > 0) {
-    $query = "SELECT ground_spawns.id, zoneid, max_x, max_y, max_z, min_x, min_y, heading, max_allowed, respawn_timer, version, item AS giid, items.name AS name
+    $query = "SELECT ground_spawns.id, zoneid, max_x, max_y, max_z, min_x, min_y, heading, max_allowed, respawn_timer, version, item AS giid, items.name AS name, min_expansion, max_expansion
                 FROM ground_spawns, items
                 WHERE ground_spawns.zoneid=$zid
                 AND ground_spawns.version=$zversion
@@ -600,7 +600,7 @@ function get_gspawn() {
     $result = $mysql->query_mult_assoc($query);
     if ($result) {
       foreach ($result as $result) {
-        $array['gspawn'][$result['id']] = array("gsid"=>$result['id'], "giid"=>$result['giid'], "zoneid"=>$result['zoneid'], "max_x"=>$result['max_x'], "max_y"=>$result['max_y'], "max_z"=>$result['max_z'], "min_x"=>$result['min_x'], "min_y"=>$result['min_y'], "heading"=>$result['heading'], "gname"=>$result['gname'], "max_allowed"=>$result['max_allowed'], "comment"=>$result['comment'], "respawn_timer"=>$result['respawn_timer'], "iname"=>$result['name'], "version"=>$result['version']);
+        $array['gspawn'][$result['id']] = array("gsid"=>$result['id'], "giid"=>$result['giid'], "zoneid"=>$result['zoneid'], "max_x"=>$result['max_x'], "max_y"=>$result['max_y'], "max_z"=>$result['max_z'], "min_x"=>$result['min_x'], "min_y"=>$result['min_y'], "heading"=>$result['heading'], "gname"=>$result['gname'], "max_allowed"=>$result['max_allowed'], "comment"=>$result['comment'], "respawn_timer"=>$result['respawn_timer'], "iname"=>$result['name'], "version"=>$result['version'], "min_expansion"=>$result['min_expansion'], "max_expansion"=>$result['max_expansion']);
       }
     }
   }
@@ -620,7 +620,7 @@ function get_traps() {
     $result = $mysql->query_mult_assoc($query);
     if ($result) {
       foreach ($result as $result) {
-        $array['traps'][$result['id']] = array("tid"=>$result['id'], "x_coord"=>$result['x'], "y_coord"=>$result['y'], "z_coord"=>$result['z'], "chance"=>$result['chance'], "maxzdiff"=>$result['maxzdiff'], "radius"=>$result['radius'], "effect"=>$result['effect'], "effectvalue"=>$result['effectvalue'], "effectvalue2"=>$result['effectvalue2'], "message"=>$result['message'], "skill"=>$result['skill'], "level"=>$result['level'], "respawn_time"=>$result['respawn_time'], "respawn_var"=>$result['respawn_var'], "version"=>$result['version'], "triggered_number"=>$result['triggered_number'], "group"=>$result['group'], "despawn_when_triggered"=>$result['despawn_when_triggered'], "undetectable"=>$result['undetectable']);
+        $array['traps'][$result['id']] = array("tid"=>$result['id'], "x_coord"=>$result['x'], "y_coord"=>$result['y'], "z_coord"=>$result['z'], "chance"=>$result['chance'], "maxzdiff"=>$result['maxzdiff'], "radius"=>$result['radius'], "effect"=>$result['effect'], "effectvalue"=>$result['effectvalue'], "effectvalue2"=>$result['effectvalue2'], "message"=>$result['message'], "skill"=>$result['skill'], "level"=>$result['level'], "respawn_time"=>$result['respawn_time'], "respawn_var"=>$result['respawn_var'], "version"=>$result['version'], "triggered_number"=>$result['triggered_number'], "group"=>$result['group'], "despawn_when_triggered"=>$result['despawn_when_triggered'], "undetectable"=>$result['undetectable'], "min_expansion"=>$result['min_expansion'], "max_expansion"=>$result['max_expansion']);
       }
     }
   }
@@ -629,7 +629,7 @@ function get_traps() {
     $result = $mysql->query_mult_assoc($query);
     if ($result) {
       foreach ($result as $result) {
-        $array['traps'][$result['id']] = array("tid"=>$result['id'], "x_coord"=>$result['x'], "y_coord"=>$result['y'], "z_coord"=>$result['z'], "chance"=>$result['chance'], "maxzdiff"=>$result['maxzdiff'], "radius"=>$result['radius'], "effect"=>$result['effect'], "effectvalue"=>$result['effectvalue'], "effectvalue2"=>$result['effectvalue2'], "message"=>$result['message'], "skill"=>$result['skill'], "level"=>$result['level'], "respawn_time"=>$result['respawn_time'], "respawn_var"=>$result['respawn_var'], "version"=>$result['version'], "triggered_number"=>$result['triggered_number'], "group"=>$result['group'], "despawn_when_triggered"=>$result['despawn_when_triggered'], "undetectable"=>$result['undetectable']);
+        $array['traps'][$result['id']] = array("tid"=>$result['id'], "x_coord"=>$result['x'], "y_coord"=>$result['y'], "z_coord"=>$result['z'], "chance"=>$result['chance'], "maxzdiff"=>$result['maxzdiff'], "radius"=>$result['radius'], "effect"=>$result['effect'], "effectvalue"=>$result['effectvalue'], "effectvalue2"=>$result['effectvalue2'], "message"=>$result['message'], "skill"=>$result['skill'], "level"=>$result['level'], "respawn_time"=>$result['respawn_time'], "respawn_var"=>$result['respawn_var'], "version"=>$result['version'], "triggered_number"=>$result['triggered_number'], "group"=>$result['group'], "despawn_when_triggered"=>$result['despawn_when_triggered'], "undetectable"=>$result['undetectable'], "min_expansion"=>$result['min_expansion'], "max_expansion"=>$result['max_expansion']);
       }
     }
   }
@@ -644,7 +644,7 @@ function get_horses() {
   $result = $mysql->query_mult_assoc($query);
   if ($result) {
     foreach ($result as $result) {
-      $array['horses'][$result['filename']] = array("filename"=>$result['filename'], "race"=>$result['race'], "gender"=>$result['gender'], "texture"=>$result['texture'], "mountspeed"=>$result['mountspeed'], "notes"=>$result['notes']);
+      $array['horses'][$result['filename']] = array("filename"=>$result['filename'], "race"=>$result['race'], "gender"=>$result['gender'], "texture"=>$result['texture'], "mountspeed"=>$result['mountspeed'], "notes"=>$result['notes'], "min_expansion"=>$result['min_expansion'], "max_expansion"=>$result['max_expansion']);
     }
   }
   return $array;
@@ -696,7 +696,7 @@ function get_objects() {
 
   if ($result) {
     foreach ($result as $result) {
-      $array['objects'][$result['id']] = array("objid"=>$result['id'], "objectname"=>$result['objectname'], "xpos"=>$result['xpos'], "ypos"=>$result['ypos'], "zpos"=>$result['zpos'], "heading"=>$result['heading'], "itemid"=>$result['itemid'], "charges"=>$result['charges'], "type"=>$result['type'], "icon"=>$result['icon'], "version"=>$result['version'], "tilt_x"=>$result['tilt_x'], "tilt_y"=>$result['tilt_y'], "size"=>$result['size'], "display_name"=>$result['display_name']);
+      $array['objects'][$result['id']] = array("objid"=>$result['id'], "objectname"=>$result['objectname'], "xpos"=>$result['xpos'], "ypos"=>$result['ypos'], "zpos"=>$result['zpos'], "heading"=>$result['heading'], "itemid"=>$result['itemid'], "charges"=>$result['charges'], "type"=>$result['type'], "icon"=>$result['icon'], "version"=>$result['version'], "tilt_x"=>$result['tilt_x'], "tilt_y"=>$result['tilt_y'], "size"=>$result['size'], "display_name"=>$result['display_name'], "min_expansion"=>$result['min_expansion'], "max_expansion"=>$result['max_expansion']);
     }
   }
 
@@ -708,7 +708,7 @@ function fishing_info() {
 
   $fsid = $_GET['fsid'];
 
-  $query = "SELECT id AS fsid,Itemid AS fiid,zoneid,skill_level,chance,npc_id,npc_chance FROM fishing WHERE id=\"$fsid\"";
+  $query = "SELECT id AS fsid,Itemid AS fiid,zoneid,skill_level,chance,npc_id,npc_chance,min_expansion,max_expansion FROM fishing WHERE id=\"$fsid\"";
   $result = $mysql->query_assoc($query);
 
   return $result;
@@ -719,7 +719,7 @@ function forage_info() {
 
   $fgid = $_GET['fgid'];
 
-  $query = "SELECT id AS fgid,Itemid AS fgiid,zoneid,level,chance FROM forage WHERE id=\"$fgid\"";
+  $query = "SELECT id AS fgid,Itemid AS fgiid,zoneid,level,chance,min_expansion,max_expansion FROM forage WHERE id=\"$fgid\"";
   $result = $mysql->query_assoc($query);
 
   return $result;
@@ -730,7 +730,7 @@ function gspawn_info() {
 
   $gsid = $_GET['gsid'];
 
-  $query = "SELECT id AS gsid,zoneid,max_x,max_y,max_z,min_x,min_y,heading,name,version,item AS giid,max_allowed,comment,respawn_timer FROM ground_spawns WHERE id=\"$gsid\"";
+  $query = "SELECT id AS gsid,zoneid,max_x,max_y,max_z,min_x,min_y,heading,name,version,item AS giid,max_allowed,comment,respawn_timer,min_expansion,max_expansion FROM ground_spawns WHERE id=\"$gsid\"";
   $result = $mysql->query_assoc($query);
 
   return $result;
@@ -790,8 +790,10 @@ function update_fishing() {
   $chance = $_POST['chance'];
   $npc_id = $_POST['npc_id'];
   $npc_chance = $_POST['npc_chance'];
+  $min_expansion = $_POST['min_expansion'];
+  $max_expansion = $_POST['max_expansion'];
 
-  $query = "UPDATE fishing SET Itemid=\"$fiid\", zoneid=\"$zoneid\", skill_level=\"$skill_level\", chance=\"$chance\", npc_id=\"$npc_id\", npc_chance=\"$npc_chance\" WHERE id=\"$fsid\"";
+  $query = "UPDATE fishing SET Itemid=\"$fiid\", zoneid=\"$zoneid\", skill_level=\"$skill_level\", chance=\"$chance\", npc_id=\"$npc_id\", npc_chance=\"$npc_chance\", min_expansion=\"$min_expansion\", max_expansion=\"$max_expansion\" WHERE id=\"$fsid\"";
   $mysql->query_no_result($query);
 }
 
@@ -803,8 +805,10 @@ function update_forage() {
   $zoneid = $_POST['zoneid'];
   $level = $_POST['level'];
   $chance = $_POST['chance'];
+  $min_expansion = $_POST['min_expansion'];
+  $max_expansion = $_POST['max_expansion'];
 
-  $query = "UPDATE forage SET Itemid=\"$fgiid\", zoneid=\"$zoneid\", level=\"$level\", chance=\"$chance\" WHERE id=\"$fgid\"";
+  $query = "UPDATE forage SET Itemid=\"$fgiid\", zoneid=\"$zoneid\", level=\"$level\", chance=\"$chance\", min_expansion=\"$min_expansion\", max_expansion=\"$max_expansion\" WHERE id=\"$fgid\"";
   $mysql->query_no_result($query);
 }
 
@@ -818,8 +822,10 @@ function update_horses() {
   $texture = $_POST['texture'];
   $mountspeed = $_POST['mountspeed'];
   $notes = $_POST['notes'];
+  $min_expansion = $_POST['min_expansion'];
+  $max_expansion = $_POST['max_expansion'];
 
-  $query = "UPDATE horses SET filename=\"$filenamea\", race=\"$race\", gender=\"$gender\", texture=\"$texture\", mountspeed=\"$mountspeed\", notes=\"$notes\" WHERE filename=\"$filename\"";
+  $query = "UPDATE horses SET filename=\"$filenamea\", race=\"$race\", gender=\"$gender\", texture=\"$texture\", mountspeed=\"$mountspeed\", notes=\"$notes\", min_expansion=\"$min_expansion\", max_expansion=\"$max_expansion\" WHERE filename=\"$filename\"";
   $mysql->query_no_result($query);
 }
 
@@ -840,8 +846,10 @@ function update_gspawn() {
   $name = $_POST['name'];
   $comment = $_POST['comment'];
   $version = $_POST['version'];
+  $min_expansion = $_POST['min_expansion'];
+  $max_expansion = $_POST['max_expansion'];
 
-  $query = "UPDATE ground_spawns SET item=\"$giid\", zoneid=\"$zoneid\", max_x=\"$max_x\", max_y=\"$max_y\", max_z=\"$max_z\", min_x=\"$min_x\", min_y=\"$min_y\", heading=\"$heading\", max_allowed=\"$max_allowed\", respawn_timer=\"$respawn_timer\", name=\"$name\", comment=\"$comment\", version=\"$version\" WHERE id=\"$gsid\"";
+  $query = "UPDATE ground_spawns SET item=\"$giid\", zoneid=\"$zoneid\", max_x=\"$max_x\", max_y=\"$max_y\", max_z=\"$max_z\", min_x=\"$min_x\", min_y=\"$min_y\", heading=\"$heading\", max_allowed=\"$max_allowed\", respawn_timer=\"$respawn_timer\", name=\"$name\", comment=\"$comment\", version=\"$version\", min_expansion=\"$min_expansion\", max_expansion=\"$max_expansion\" WHERE id=\"$gsid\"";
   $mysql->query_no_result($query);
 }
 
@@ -869,8 +877,10 @@ function update_traps() {
   $group = $_POST['group'];
   $despawn_when_triggered = $_POST['despawn_when_triggered'];
   $undetectable = $_POST['undetectable'];
+  $min_expansion = $_POST['min_expansion'];
+  $max_expansion = $_POST['max_expansion'];
 
-  $query = "UPDATE traps SET zone=\"$zone\", x=\"$x\", y=\"$y\", z=\"$z_coord\", chance=\"$chance\", maxzdiff=\"$maxzdiff\", radius=\"$radius\", effect=\"$effect\", effectvalue=\"$effectvalue\", effectvalue2=\"$effectvalue2\", message=\"$message\", skill=\"$skill\", level=\"$level\", respawn_time=\"$respawn_time\", respawn_var=\"$respawn_var\", version=\"$version\", triggered_number=\"$triggered_number\", `group`=\"$group\", despawn_when_triggered=\"$despawn_when_triggered\", undetectable=\"$undetectable\" WHERE id=\"$tid\"";
+  $query = "UPDATE traps SET zone=\"$zone\", x=\"$x\", y=\"$y\", z=\"$z_coord\", chance=\"$chance\", maxzdiff=\"$maxzdiff\", radius=\"$radius\", effect=\"$effect\", effectvalue=\"$effectvalue\", effectvalue2=\"$effectvalue2\", message=\"$message\", skill=\"$skill\", level=\"$level\", respawn_time=\"$respawn_time\", respawn_var=\"$respawn_var\", version=\"$version\", triggered_number=\"$triggered_number\", `group`=\"$group\", despawn_when_triggered=\"$despawn_when_triggered\", undetectable=\"$undetectable\", min_expansion=\"$min_expansion\", max_expansion=\"$max_expansion\" WHERE id=\"$tid\"";
   $mysql->query_no_result($query);
 }
 
@@ -932,8 +942,10 @@ function update_object() {
   $size = $_POST['size'];
   $display_name = $_POST['display_name'];
   $oldid = $_POST['oldid'];
+  $min_expansion = $_POST['min_expansion'];
+  $max_expansion = $_POST['max_expansion'];
 
-  $query = "UPDATE object SET id=\"$id\", objectname=\"$objectname\", xpos=\"$xpos\", ypos=\"$ypos\", zpos=\"$zpos\", heading=\"$heading\", itemid=\"$itemid\", charges=\"$charges\", type=\"$type\", icon=\"$icon\", version=\"$version\", tilt_x=\"$tilt_x\", tilt_y=\"$tilt_y\", size=\"$size\", display_name=\"$display_name\" WHERE id=\"$oldid\"";
+  $query = "UPDATE object SET id=\"$id\", objectname=\"$objectname\", xpos=\"$xpos\", ypos=\"$ypos\", zpos=\"$zpos\", heading=\"$heading\", itemid=\"$itemid\", charges=\"$charges\", type=\"$type\", icon=\"$icon\", version=\"$version\", tilt_x=\"$tilt_x\", tilt_y=\"$tilt_y\", size=\"$size\", display_name=\"$display_name\", min_expansion=\"$min_expansion\", max_expansion=\"$max_expansion\" WHERE id=\"$oldid\"";
   $mysql->query_no_result($query);
 }
 
@@ -1027,7 +1039,6 @@ function suggest_gspawn_id() {
   return ($result['gsid'] + 1);
 }
 
-
 function suggest_traps_id() {
   global $mysql;
 
@@ -1074,8 +1085,10 @@ function add_fishing() {
   $chance = $_POST['chance'];
   $npc_id = $_POST['npc_id'];
   $npc_chance = $_POST['npc_chance'];
+  $min_expansion = $_POST['min_expansion'];
+  $max_expansion = $_POST['max_expansion'];
 
-  $query = "INSERT INTO fishing SET id=\"$fsid\", Itemid=\"$fiid\", zoneid=\"$zoneid\", skill_level=\"$skill_level\", chance=\"$chance\", npc_id=\"$npc_id\", npc_chance=\"$npc_chance\"";
+  $query = "INSERT INTO fishing SET id=\"$fsid\", Itemid=\"$fiid\", zoneid=\"$zoneid\", skill_level=\"$skill_level\", chance=\"$chance\", npc_id=\"$npc_id\", npc_chance=\"$npc_chance\", min_expansion=\"$min_expansion\", max_expansion=\"$max_expansion\"";
   $mysql->query_no_result($query);
 }
 
@@ -1087,8 +1100,10 @@ function add_forage() {
   $zoneid = $_POST['zoneid'];
   $level = $_POST['level'];
   $chance = $_POST['chance'];
+  $min_expansion = $_POST['min_expansion'];
+  $max_expansion = $_POST['max_expansion'];
 
-  $query = "INSERT INTO forage SET id=\"$fgid\", Itemid=\"$fgiid\", zoneid=\"$zoneid\", level=\"$level\", chance=\"$chance\"";
+  $query = "INSERT INTO forage SET id=\"$fgid\", Itemid=\"$fgiid\", zoneid=\"$zoneid\", level=\"$level\", chance=\"$chance\", min_expansion=\"$min_expansion\", max_expansion=\"$max_expansion\"";
   $mysql->query_no_result($query);
 }
 
@@ -1109,8 +1124,10 @@ function add_gspawn() {
   $name = $_POST['name'];
   $comment = $_POST['comment'];
   $version = $_POST['version'];
+  $min_expansion = $_POST['min_expansion'];
+  $max_expansion = $_POST['max_expansion'];
 
-  $query = "INSERT INTO ground_spawns SET id=\"$gsid\", item=\"$giid\", zoneid=\"$zoneid\", max_x=\"$max_x\", max_y=\"$max_y\", max_z=\"$max_z\", min_x=\"$min_x\", min_y=\"$min_y\", heading=\"$heading\", max_allowed=\"$max_allowed\", respawn_timer=\"$respawn_timer\", name=\"$name\", comment=\"$comment\", version=\"$version\"";
+  $query = "INSERT INTO ground_spawns SET id=\"$gsid\", item=\"$giid\", zoneid=\"$zoneid\", max_x=\"$max_x\", max_y=\"$max_y\", max_z=\"$max_z\", min_x=\"$min_x\", min_y=\"$min_y\", heading=\"$heading\", max_allowed=\"$max_allowed\", respawn_timer=\"$respawn_timer\", name=\"$name\", comment=\"$comment\", version=\"$version\", min_expansion=\"$min_expansion\", max_expansion=\"$max_expansion\"";
   $mysql->query_no_result($query);
 }
 
@@ -1138,8 +1155,10 @@ function add_traps() {
   $group = $_POST['group'];
   $despawn_when_triggered = $_POST['despawn_when_triggered'];
   $undetectable = $_POST['undetectable'];
+  $min_expansion = $_POST['min_expansion'];
+  $max_expansion = $_POST['max_expansion'];
 
-  $query = "INSERT INTO traps SET id=\"$tid\", zone=\"$zone\", x=\"$x\", y=\"$y\", z=\"$z_coord\", chance=\"$chance\", maxzdiff=\"$maxzdiff\", radius=\"$radius\", effect=\"$effect\", effectvalue=\"$effectvalue\", effectvalue2=\"$effectvalue2\", message=\"$message\", skill=\"$skill\", level=\"$level\", respawn_time=\"$respawn_time\", respawn_var=\"$respawn_var\", version=\"$version\", triggered_number=\"$triggered_number\", `group`=\"$group\", despawn_when_triggered=\"$despawn_when_triggered\", undetectable=\"$undetectable\"";
+  $query = "INSERT INTO traps SET id=\"$tid\", zone=\"$zone\", x=\"$x\", y=\"$y\", z=\"$z_coord\", chance=\"$chance\", maxzdiff=\"$maxzdiff\", radius=\"$radius\", effect=\"$effect\", effectvalue=\"$effectvalue\", effectvalue2=\"$effectvalue2\", message=\"$message\", skill=\"$skill\", level=\"$level\", respawn_time=\"$respawn_time\", respawn_var=\"$respawn_var\", version=\"$version\", triggered_number=\"$triggered_number\", `group`=\"$group\", despawn_when_triggered=\"$despawn_when_triggered\", undetectable=\"$undetectable\", min_expansion=\"$min_expansion\", max_expansion=\"$max_expansion\"";
   $mysql->query_no_result($query);
 }
 
@@ -1152,8 +1171,10 @@ function add_horses() {
   $texture = $_POST['texture'];
   $mountspeed = $_POST['mountspeed'];
   $notes = $_POST['notes'];
+  $min_expansion = $_POST['min_expansion'];
+  $max_expansion = $_POST['max_expansion'];
 
-  $query = "INSERT INTO horses SET filename=\"$filename\", race=\"$race\", gender=\"$gender\", texture=\"$texture\", mountspeed=\"$mountspeed\", notes=\"$notes\"";
+  $query = "INSERT INTO horses SET filename=\"$filename\", race=\"$race\", gender=\"$gender\", texture=\"$texture\", mountspeed=\"$mountspeed\", notes=\"$notes\", min_expansion=\"$min_expansion\", max_expansion=\"$max_expansion\"";
   $mysql->query_no_result($query);
 }
 
@@ -1212,8 +1233,10 @@ function add_objects() {
   $type = $_POST['type'];
   $icon = $_POST['icon'];
   $version = $_POST['version'];
+  $min_expansion = $_POST['min_expansion'];
+  $max_expansion = $_POST['max_expansion'];
 
-  $query = "INSERT INTO object SET id=\"$objid\", zoneid=\"$zid\", objectname=\"$objectname\", xpos=\"$xpos\", ypos=\"$ypos\", zpos=\"$zpos\", heading=\"$heading\", itemid=\"$itemid\", charges=\"$charges\", type=\"$type\", icon=\"$icon\", version=\"$version\"";
+  $query = "INSERT INTO object SET id=\"$objid\", zoneid=\"$zid\", objectname=\"$objectname\", xpos=\"$xpos\", ypos=\"$ypos\", zpos=\"$zpos\", heading=\"$heading\", itemid=\"$itemid\", charges=\"$charges\", type=\"$type\", icon=\"$icon\", version=\"$version\", min_expansion=\"$min_expansion\", max_expansion=\"$max_expansion\"";
 
   $mysql->query_no_result($query);
 }
@@ -1369,8 +1392,8 @@ function copy_groundspawns() {
    $query = "UPDATE ground_spawns SET version=9999 WHERE version=0 AND zoneid=\"$zid\"";
    $mysql->query_no_result($query);
 
-   $query = "INSERT INTO ground_spawns (zoneid,max_x,max_y,max_z,min_x,min_y,heading,name,item,max_allowed,comment,respawn_timer)
-            SELECT zoneid,max_x,max_y,max_z,min_x,min_y,heading,name,item,max_allowed,comment,respawn_timer FROM ground_spawns WHERE zoneid=\"$zid\" AND version=10000";
+   $query = "INSERT INTO ground_spawns (zoneid,max_x,max_y,max_z,min_x,min_y,heading,name,item,max_allowed,comment,respawn_timer,min_expansion,max_expansion)
+            SELECT zoneid,max_x,max_y,max_z,min_x,min_y,heading,name,item,max_allowed,comment,respawn_timer,min_expansion,max_expansion FROM ground_spawns WHERE zoneid=\"$zid\" AND version=10000";
    $mysql->query_no_result($query);
 
    $query = "UPDATE ground_spawns SET version=$new_version WHERE version=0 AND zoneid=\"$zid\"";
@@ -1395,8 +1418,8 @@ function copy_traps() {
    $query = "UPDATE traps SET version=9999 WHERE version=0 AND zone=\"$z\"";
    $mysql->query_no_result($query);
 
-   $query = "INSERT INTO traps (zone,x,y,z,chance,maxzdiff,radius,effect,effectvalue,effectvalue2,message,skill,level,respawn_time,respawn_var,triggered_number,`group`,despawn_when_triggered,undetectable)
-            SELECT zone,x,y,z,chance,maxzdiff,radius,effect,effectvalue,effectvalue2,message,skill,level,respawn_time,respawn_var,triggered_number,`group`,despawn_when_triggered,undetectable FROM traps WHERE zone=\"$z\" AND version=10000";
+   $query = "INSERT INTO traps (zone,x,y,z,chance,maxzdiff,radius,effect,effectvalue,effectvalue2,message,skill,level,respawn_time,respawn_var,triggered_number,`group`,despawn_when_triggered,undetectable,min_expansion,max_expansion)
+            SELECT zone,x,y,z,chance,maxzdiff,radius,effect,effectvalue,effectvalue2,message,skill,level,respawn_time,respawn_var,triggered_number,`group`,despawn_when_triggered,undetectable,min_expansion,max_expansion FROM traps WHERE zone=\"$z\" AND version=10000";
    $mysql->query_no_result($query);
 
    $query = "UPDATE traps SET version=$new_version WHERE version=0 AND zone=\"$z\"";
@@ -1422,8 +1445,8 @@ function copy_objects() {
    $query = "UPDATE object SET version=9999 WHERE version=0 AND zoneid=\"$zid\"";
    $mysql->query_no_result($query);
 
-   $query = "INSERT INTO object (zoneid,xpos,ypos,zpos,heading,itemid,charges,objectname,type,icon)
-            SELECT zoneid,xpos,ypos,zpos,heading,itemid,charges,objectname,type,icon FROM object WHERE zoneid=\"$zid\" AND version=10000";
+   $query = "INSERT INTO object (zoneid,xpos,ypos,zpos,heading,itemid,charges,objectname,type,icon,min_expansion,max_expansion)
+            SELECT zoneid,xpos,ypos,zpos,heading,itemid,charges,objectname,type,icon,min_expansion,max_expansion FROM object WHERE zoneid=\"$zid\" AND version=10000";
    $mysql->query_no_result($query);
 
    $query = "UPDATE object SET version=$new_version WHERE version=0 AND zoneid=\"$zid\"";

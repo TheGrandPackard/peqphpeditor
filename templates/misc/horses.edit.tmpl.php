@@ -15,13 +15,12 @@
           <tr>
             <td><input type="text" size="33" name="filenamea" value="<?=$filename?>"></td>
             <td><input type="text" size="7" name="texture" value="<?=$texture?>"></td>
-            <td><input type="text" size="15" name="mountspeed" value="<?=$mountspeed?>"></td>
-             </tr>
-             <tr>
-            <th>Race</th>
-            <th>Gender</th>
-            <th>Notes</th>
-          </tr>
+            <td><input type="text" size="7" name="mountspeed" value="<?=$mountspeed?>"></td>
+            </tr>
+            <tr>
+              <th>Race</th>
+              <th>Gender</th>
+            </tr>
              <tr>
             <td><select name="race"">
 <?foreach($races as $key=>$value):?>
@@ -33,7 +32,15 @@
                    <option value="<?=$key?>"<?echo ($key == $gender)? " selected" : "";?>><?=$value?></option>
 <?endforeach;?>
                  </select></td>
-             <td><input type="text" size="15" name="notes" value="<?=$notes?>"></td>
+            </tr>
+            <tr>
+              <th>Notes</th>
+              <th>Min Expansion</th>
+              <th>Max Expan.</th>
+            </tr>
+             <td><input type="text" size="33" name="notes" value="<?=$notes?>"></td>
+             <td><input type="text" size="7" name="min_expansion" value="<?=$min_expansion?>"></td>
+             <td><input type="text" size="7" name="max_expansion" value="<?=$max_expansion?>"></td>
           </tr>
          </table><br><br>
         <center>

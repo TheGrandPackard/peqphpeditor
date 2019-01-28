@@ -28,12 +28,12 @@
               <strong>z</strong><br>
               <input type="text" size="7" name="z_coord" value="<?=$z?>">
             </td>
+          </tr>
+          <tr>
             <td align="center">
               <strong>maxzdiff</strong><br>
               <input type="text" size="7" name="maxzdiff" value="<?=$maxzdiff?>">
             </td>
-          </tr>
-          <tr>
             <td align="center">
               <strong>level</strong><br>
               <input type="text" size="7" name="level" value="<?=$level?>">
@@ -54,6 +54,8 @@
               <strong>effectvalue</strong><br>
               <input type="text" size="7" name="effectvalue" value="<?=$effectvalue?>">
             </td>
+          </tr>
+          <tr>
             <td align="center">
               <strong>effectvalue2</strong><br>
               <input type="text" size="7" name="effectvalue2" value="<?=$effectvalue2?>">
@@ -66,14 +68,6 @@
 <?endforeach;?>
               </select>
             </td>
-          </tr>
-          <tr>
-            <td colspan="7" align="center">
-              <strong>message</strong>
-              <input type="text" size="114" name="message" value="<?=$message?>">
-            </td>
-          </tr>
-          <tr>
             <td align="center">
               <strong><br>chance</strong><br>
               <input type="text" size="7" name="chance" value="<?=$chance?>">
@@ -90,6 +84,8 @@
               <strong><br>group</strong><br>
               <input type="text" size="7" name="group" value="<?=$group?>">
             </td>
+          </tr>
+          <tr>
             <td align="center">
               <strong>despawn when<br>triggered</strong><br>
               <input type="text" size="7" name="despawn_when_triggered" value="<?=$despawn_when_triggered?>">              
@@ -98,7 +94,21 @@
               <strong><br>undetectable</strong><br>
               <input type="text" size="7" name="undetectable" value="<?=$undetectable?>">
             </td>
+            <td align="center">
+              <strong><br>min expansion</strong><br>
+              <input type="text" size="7" name="min_expansion" value="<?=$min_expansion?>">
+            </td>
+            <td align="center">
+              <strong><br>max expansion</strong><br>
+              <input type="text" size="7" name="max_expansion" value="<?=$max_expansion?>">
+            </td>
             <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td colspan="7" align="center">
+              <strong>message</strong>
+              <input type="text" size="95" name="message" value="<?=$message?>">
+            </td>
           </tr>
         </table><br><br>
         <center>

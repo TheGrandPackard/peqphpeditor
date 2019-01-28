@@ -17,6 +17,10 @@
             <input class="indented" id="id" type="text" name="level" size="7" value="<?=$level?>"><br><br>
             <strong>Chance</strong><br>
             <input class="indented" id="id" type="text" name="chance" size="7" value="<?=$chance?>">%<br><br>
+            <strong>Min Expansion</strong><br>
+            <input class="indented" id="id" type="text" name="min_expansion" size="7" value="<?=$min_expansion?>"><br><br>
+            <strong>Max Expansion</strong><br>
+            <input class="indented" id="id" type="text" name="max_expansion" size="7" value="<?=$max_expansion?>"><br><br>
 
         <center>
           <input type="hidden" name="fgid" value="<?=$fgid?>">

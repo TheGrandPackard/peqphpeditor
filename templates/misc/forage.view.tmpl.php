@@ -30,6 +30,8 @@
           <td align="center" width="20%"><?=get_item_name($fgiid)?> <span>[<a href="http://lucy.allakhazam.com/item.html?id=<?=$fgiid?>">lucy</a>]</span></td>
           <td align="center" width="5%"><?=$level?></td>
           <td align="center" width="5%"><?=$chance?>%</td>  
+          <td align="center" width="8%"><?=$min_expansion?></td>
+          <td align="center" width="8%"><?=$max_expansion?></td>
           <td align="right">      
             <a href="index.php?editor=misc&z=<?=$currzone?>&zoneid=<?=$currzoneid?>&fgid=<?=$fgid?>&action=8"><img src="images/edit2.gif" border="0" title="Edit Entry"></a>          
             <a href="index.php?editor=misc&z=<?=$currzone?>&zoneid=<?=$currzoneid?>&fgid=<?=$fgid?>&action=10"><img src="images/remove3.gif" border="0" title="Delete this entry"></a>

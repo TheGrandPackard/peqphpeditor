@@ -34,6 +34,10 @@
         <input class="indented" id="id" type="text" name="name" size="20" value="<?=$name?>"><br><br>
         <strong>Comment</strong><br>
         <input class="indented" id="id" type="text" name="comment" size="20" value="<?=$comment?>"><br><br>
+        <strong>Min Expansion</strong><br>
+        <input class="indented" id="id" type="text" name="min_expansion" size="7" value="<?=$min_expansion?>"><br><br>
+        <strong>Max Expansion</strong><br>
+        <input class="indented" id="id" type="text" name="max_expansion" size="7" value="<?=$max_expansion?>"><br><br>
         <center>
           <input type="hidden" name="gsid" value="<?=$gsid?>">
           <input type="submit" value="Submit Changes">&nbsp;&nbsp;

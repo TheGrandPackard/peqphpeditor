@@ -29,6 +29,8 @@
         <td align="center" width="5%"><strong>respawn</strong></td>
         <td align="center" width="5%"><strong>variance</strong></td>
         <td align="center" width="5%"><strong>version</strong></td>
+        <td align="center" width="4%"><strong>min expan.</strong></td>
+        <td align="center" width="4%"><strong>max expan.</strong></td>
         <td width="5%">&nbsp;</td>
       </tr>
 <?$x=0; foreach($traps as $traps=>$v):?>
@@ -61,6 +63,8 @@
         <td align="center" width="5%"><?=$v['respawn_time']?></td>
         <td align="center" width="5%"><?=$v['respawn_var']?></td>
         <td align="center" width="5%"><?=$v['version']?></td>
+        <td align="center" width="4%"><?=$v['min_expansion']?></td>
+        <td align="center" width="4%"><?=$v['max_expansion']?></td>
         <td align="right">      
           <a href="index.php?editor=misc&z=<?=$currzone?>&zoneid=<?=$currzoneid?>&tid=<?=$v['tid']?>&action=20"><img src="images/edit2.gif" border="0" title="Edit Entry"></a>          
           <a onClick="return confirm('Really Delete Trap <?=$v['tid']?>?');" href="index.php?editor=misc&z=<?=$currzone?>&zoneid=<?=$currzoneid?>&tid=<?=$v['tid']?>&action=22"><img src="images/remove3.gif" border="0" title="Delete this entry"></a>

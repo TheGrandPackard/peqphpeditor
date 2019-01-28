@@ -24,6 +24,8 @@
         <td align="center" width="5%"><strong>Min y</strong></td>
         <td align="center" width="5%"><strong>Respawn</strong></td>
         <td align="center" width="5%"><strong>Version</strong></td>
+        <td align="center" width="8%"><strong>Min Expansion</strong></td>
+        <td align="center" width="8%"><strong>Max Expansion</strong></td>
         <td width="5%">&nbsp;</td>
       </tr>
 <?$x=0; foreach($gspawn as $gspawn=>$v):?>
@@ -38,6 +40,8 @@
         <td align="center" width="5%"><?=$v['min_y']?></td>
         <td align="center" width="5%"><?=$v['respawn_timer']?></td>
         <td align="center" width="5%"><?=$v['version']?></td>
+        <td align="center" width="8%"><?=$v['min_expansion']?></td>
+        <td align="center" width="8%"><?=$v['max_expansion']?></td>
         <td align="right">
           <a href="index.php?editor=misc&z=<?=$currzone?>&zoneid=<?=$currzoneid?>&gsid=<?=$v['gsid']?>&action=14"><img src="images/edit2.gif" border="0" title="Edit Entry"></a>
           <a onClick="return confirm('Really Delete Entry <?=$v['gsid']?>?');" href="index.php?editor=misc&z=<?=$currzone?>&zoneid=<?=$currzoneid?>&gsid=<?=$v['gsid']?>&action=16"><img src="images/remove3.gif" border="0" title="Delete this entry"></a>

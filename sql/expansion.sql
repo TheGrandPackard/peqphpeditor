@@ -10,6 +10,8 @@ ALTER TABLE `global_loot` ADD `min_expansion` TINYINT(4)  UNSIGNED  NOT NULL  DE
 ALTER TABLE `global_loot` ADD `max_expansion` TINYINT(4)  UNSIGNED  NOT NULL  DEFAULT '99'  AFTER `min_expansion`;
 ALTER TABLE `ground_spawns` ADD `min_expansion` TINYINT(4)  UNSIGNED  NOT NULL  DEFAULT '0'  AFTER `respawn_timer`;
 ALTER TABLE `ground_spawns` ADD `max_expansion` TINYINT(4)  UNSIGNED  NOT NULL  DEFAULT '99'  AFTER `min_expansion`;
+ALTER TABLE `horses` ADD `min_expansion` TINYINT(4)  UNSIGNED  NOT NULL  DEFAULT '0'  AFTER `notes`;
+ALTER TABLE `horses` ADD `max_expansion` TINYINT(4)  UNSIGNED  NOT NULL  DEFAULT '99'  AFTER `min_expansion`;
 ALTER TABLE `loottable` ADD `min_expansion` TINYINT(4)  UNSIGNED  NOT NULL  DEFAULT '0'  AFTER `done`;
 ALTER TABLE `loottable` ADD `max_expansion` TINYINT(4)  UNSIGNED  NOT NULL  DEFAULT '99'  AFTER `min_expansion`;
 ALTER TABLE `lootdrop` ADD `min_expansion` TINYINT(4)  UNSIGNED  NOT NULL  DEFAULT '0'  AFTER `name`;

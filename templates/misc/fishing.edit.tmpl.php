@@ -21,6 +21,10 @@
             <input class="indented" id="id" type="text" name="npc_id" size="7" value="<?=$npc_id?>"><br><br>
             <strong>NPC Chance</strong><br>
             <input class="indented" id="id" type="text" name="npc_chance" size="7" value="<?=$npc_chance?>">%<br><br>
+            <strong>Min Expansion</strong><br>
+            <input class="indented" id="id" type="text" name="min_expansion" size="7" value="<?=$min_expansion?>"><br><br>
+            <strong>Max Expansion</strong><br>
+            <input class="indented" id="id" type="text" name="max_expansion" size="7" value="<?=$max_expansion?>"><br><br>
 
         <center>
           <input type="hidden" name="fsid" value="<?=$fsid?>">

@@ -28,12 +28,12 @@
               <strong>z</strong><br>
               <input type="text" size="7" name="z_coord" value="0">
             </td>
+          </tr>
+          <tr>
             <td align="center">
               <strong>maxzdiff</strong><br>
               <input type="text" size="7" name="maxzdiff" value="0">
             </td>
-          </tr>
-          <tr>
             <td align="center">
               <strong>level</strong><br>
               <input type="text" size="7" name="level" value="1">
@@ -54,6 +54,8 @@
               <strong>effectvalue</strong><br>
               <input type="text" size="7" name="effectvalue" value="0">
             </td>
+          </tr>
+          <tr>
             <td align="center">
               <strong>effectvalue2</strong><br>
               <input type="text" size="7" name="effectvalue2" value="0">
@@ -66,14 +68,6 @@
 <?$x++; endforeach;?>
               </select>
             </td>
-          </tr>
-          <tr>
-            <td colspan="7" align="center">
-              <strong>message</strong>
-              <input type="text" size="114" name="message" value="">
-            </td>
-          </tr>
-          <tr>
             <td align="center">
               <strong><br>chance</strong><br>
               <input type="text" size="7" name="chance" value="0">
@@ -90,6 +84,8 @@
               <strong><br>group</strong><br>
               <input type="text" size="7" name="group" value="0">
             </td>
+          </tr>
+          <tr>
             <td align="center">
               <strong>despawn when<br>triggered</strong><br>
               <input type="text" size="7" name="despawn_when_triggered" value="0">              
@@ -98,7 +94,21 @@
               <strong><br>undetectable</strong><br>
               <input type="text" size="7" name="undetectable" value="0">
             </td>
+            <td align="center">
+              <strong><br>min expansion</strong><br>
+              <input type="text" size="7" name="min_expansion" value="0">
+            </td>
+            <td align="center">
+              <strong><br>max expansion</strong><br>
+              <input type="text" size="7" name="max_expansion" value="99">
+            </td>
             <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td colspan="7" align="center">
+              <strong>message</strong>
+              <input type="text" size="95" name="message" value="">
+            </td>
           </tr>
         </table><br><br>
         <center>

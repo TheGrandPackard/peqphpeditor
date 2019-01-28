@@ -9,6 +9,7 @@
              <center><a href="index.php?editor=misc&z=<?=$currzone?>&zoneid=<?=$currzoneid?>&action=1">Fishing for <?=$currzone?></a><br></center>
              <center><a href="index.php?editor=misc&z=<?=$currzone?>&zoneid=<?=$currzoneid?>&action=7">Forage for <?=$currzone?></a><br></center>
              <center><a href="index.php?editor=misc&z=<?=$currzone?>&zoneid=<?=$currzoneid?>&action=13">Ground Spawns in <?=$currzone?></a><br></center>
+             <center><a href="index.php?editor=misc&z=<?=$currzone?>&zoneid=<?=$currzoneid?>&action=29">Horses in <?=$currzone?></a><br></center>
              <center><a href="index.php?editor=misc&z=<?=$currzone?>&zoneid=<?=$currzoneid?>&action=19">Traps in <?=$currzone?></a><br></center>
              <center><a href="index.php?editor=misc&z=<?=$currzone?>&zoneid=<?=$currzoneid?>&action=35">View Doors in <?=$currzone?></a><br></center>
              <center><a href="index.php?editor=misc&z=<?=$currzone?>&zoneid=<?=$currzoneid?>&action=41">View Objects in <?=$currzone?></a><br></center> 

@@ -53,6 +53,15 @@
                 </select>
               </td>
             </tr>
+            <tr><td colspan="5">&nbsp;</td></tr>
+            <tr>
+              <td><strong>Min Expansion</strong></td>
+              <td><strong>Max Expansion</strong></td>
+            </tr>
+            <tr>
+              <td><input type="text" size="7" name="min_expansion" value="<?=$min_expansion?>"></td>
+              <td><input type="text" size="7" name="max_expansion" value="<?=$max_expansion?>"></td>
+            </tr>
           </table><br><br>
           <center>
             <input type="hidden" name="oldid" value="<?=$id?>">
