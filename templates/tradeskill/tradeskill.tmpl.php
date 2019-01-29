@@ -37,7 +37,9 @@
       <strong>Quest Controlled:</strong> <?=$yesno[$quest]?><br>
       <strong>Learn Flag:</strong> <?echo ($must_learn) ? "Yes" : "No";?><br>
       <strong>Enabled:</strong> <?=$yesno[$enabled]?><br>
-      <strong>Notes:</strong> <?=$notes?>
+      <strong>Notes:</strong> <?=$notes?><br>
+      <strong>Minimum Expansion:</strong> <?=$min_expansion?><br>
+      <strong>Maximum Expansion:</strong> <?=$max_expansion?>
     </div>
   </div><br>
   <div class="table_container">

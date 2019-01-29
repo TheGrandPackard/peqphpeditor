@@ -91,13 +91,23 @@
             <tr>
               <td colspan="5">
                 <strong>Prefix:</strong><br>
-                <input type="text" name="prefix" size="70" value="">
+                <input type="text" name="prefix" size="60" value="">
               </td>
             </tr>
             <tr>
               <td colspan="5">
                 <strong>Suffix:</strong><br>
-                <input type="text" name="suffix" size="70" value="">
+                <input type="text" name="suffix" size="60" value="">
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <strong>Min Expansion</strong><br>
+                <input type="text" name="id" size="7" value="0">
+              </td>
+              <td>
+                <strong>Max Expansion</strong><br>
+                <input type="text" name="status" size="7" value="99">
               </td>
             </tr>
           </table><br><br>

@@ -28,7 +28,7 @@ ALTER TABLE `start_zones` ADD `min_expansion` TINYINT(4)  UNSIGNED  NOT NULL  DE
 ALTER TABLE `start_zones` ADD `max_expansion` TINYINT(4)  UNSIGNED  NOT NULL  DEFAULT '99'  AFTER `min_expansion`;
 ALTER TABLE `titles` ADD `min_expansion` TINYINT(4)  UNSIGNED  NOT NULL  DEFAULT '0'  AFTER `title_set`;
 ALTER TABLE `titles` ADD `max_expansion` TINYINT(4)  UNSIGNED  NOT NULL  DEFAULT '99'  AFTER `min_expansion`;
-ALTER TABLE `tradeskill_recipe` ADD `min_expansion` TINYINT(4)  UNSIGNED  NOT NULL  DEFAULT '4'  AFTER `enabled`;
+ALTER TABLE `tradeskill_recipe` ADD `min_expansion` TINYINT(4)  UNSIGNED  NOT NULL  DEFAULT '0'  AFTER `enabled`;
 ALTER TABLE `tradeskill_recipe` ADD `max_expansion` TINYINT(4)  UNSIGNED  NOT NULL  DEFAULT '99'  AFTER `min_expansion`;
 ALTER TABLE `traps` ADD `min_expansion` TINYINT(4)  UNSIGNED  NOT NULL  DEFAULT '0'  AFTER `undetectable`;
 ALTER TABLE `traps` ADD `max_expansion` TINYINT(4)  UNSIGNED  NOT NULL  DEFAULT '99'  AFTER `min_expansion`;

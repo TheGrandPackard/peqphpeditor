@@ -241,6 +241,8 @@ function update_recipe () {
   $enabled = $_POST['enabled'];
   $old = recipe_info();
   $fields = '';
+  $min_expansion = $_POST['min_expansion'];
+  $max_expansion = $_POST['max_expansion'];
 
   if($old['id'] != $id) $fields .= "id=$id, ";
   if($old['name'] != $name) $fields .= "name=\"$name\", ";
@@ -253,6 +255,8 @@ function update_recipe () {
   if($old['must_learn'] != $must_learn) $fields .= "must_learn=\"$must_learn\", ";
   if($old['quest'] != $quest) $fields .= "quest=\"$quest\", ";
   if($old['enabled'] != $enabled) $fields .= "enabled=\"$enabled\", ";
+  if($old['min_expansion'] != $min_expansion) $fields .= "min_expansion=\"$min_expansion\", ";
+  if($old['max_expansion'] != $max_expansion) $fields .= "max_expansion=\"$max_expansion\", ";
 
   $fields =  rtrim($fields, ", ");
 
@@ -401,6 +405,8 @@ function add_recipe() {
   if(isset($_POST['must_learn'])) $fields .= "must_learn=\"{$_POST['must_learn']}\", ";
   if(isset($_POST['quest'])) $fields .= "quest=\"{$_POST['quest']}\", ";
   if(isset($_POST['enabled'])) $fields .= "enabled=\"{$_POST['enabled']}\", ";
+  if(isset($_POST['min_expansion'])) $fields .= "min_expansion=\"{$_POST['min_expansion']}\", ";
+  if(isset($_POST['max_expansion'])) $fields .= "max_expansion=\"{$_POST['max_expansion']}\", ";
 
   $fields =  rtrim($fields, ", ");
 
@@ -421,12 +427,12 @@ function copy_tradeskill() {
   $query = "DELETE FROM tradeskill_recipe_entries WHERE recipe_id=0";
   $mysql->query_no_result($query);
 
-  $query = "INSERT INTO tradeskill_recipe (name,tradeskill,skillneeded,trivial,nofail,replace_container,notes,must_learn,quest,enabled) 
-            SELECT CONCAT(name,' - Copy'),tradeskill,skillneeded,trivial,nofail,replace_container,notes,must_learn,quest,enabled FROM tradeskill_recipe where id=$rec";
+  $query = "INSERT INTO tradeskill_recipe (name,tradeskill,skillneeded,trivial,nofail,replace_container,notes,must_learn,quest,enabled,min_expansion,max_expansion) 
+            SELECT CONCAT(name,' - Copy'),tradeskill,skillneeded,trivial,nofail,replace_container,notes,must_learn,quest,enabled,min_expansion,max_expansion FROM tradeskill_recipe where id=$rec";
   $mysql->query_no_result($query);
 
-  $query = "INSERT INTO tradeskill_recipe_entries (item_id,successcount,failcount,componentcount,iscontainer,salvagecount) 
-            SELECT item_id,successcount,failcount,componentcount,iscontainer,salvagecount FROM tradeskill_recipe_entries where recipe_id=$rec";
+  $query = "INSERT INTO tradeskill_recipe_entries (item_id,successcount,failcount,componentcount,iscontainer,salvagecount,min_expansion,max_expansion) 
+            SELECT item_id,successcount,failcount,componentcount,iscontainer,salvagecount,min_expansion,max_expansion FROM tradeskill_recipe_entries where recipe_id=$rec";
   $mysql->query_no_result($query);
 
   $query = "SELECT MAX(id) as tid FROM tradeskill_recipe";

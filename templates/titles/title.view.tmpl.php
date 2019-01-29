@@ -33,5 +33,9 @@
         <td colspan="3" width="50%"><strong>Prefix:</strong> <?=$title['prefix']?></td>
         <td colspan="3" width="50%"><strong>Suffix:</strong> <?=$title['suffix']?></td>
       </tr>
+      <tr>
+        <td><strong>Min Expansion:</strong> <?=$title['min_expansion']?><br><br></td>
+        <td><strong>Max Expansion:</strong> <?=$title['max_expansion'];?><br><br></td>
+      </tr>
     </table>
   </div>

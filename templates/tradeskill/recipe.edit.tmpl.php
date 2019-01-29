@@ -5,7 +5,7 @@
     <div class="edit_form_content">
       <form method="post" action="index.php?editor=tradeskill&ts=<?=$ts?>&rec=<?=$rec?>&action=2">
         Recipe Name: <br>
-        <input type="text" name="name" size="30" value="<?=$name?>"><br><br>
+        <input type="text" name="name" size="25" value="<?=$name?>"><br><br>
         Tradeskill Used: <br>
         <select name='tradeskill'>
 <?foreach($tradeskills as $k=>$v):?>
@@ -56,7 +56,11 @@
           <option value="1"<?echo ($enabled == 1) ? " selected" : ""?>>yes</option>
         </select><br><br>
         Notes:<br>
-        <input type="text" name="notes" size="30" value="<?=$notes?>"><br><br>
+        <input type="text" name="notes" size="25" value="<?=$notes?>"><br><br>
+        Minimum Expansion:<br>
+        <input type="text" name="min_expansion" size="7" value="<?=$min_expansion?>"><br><br>
+        Maximum Expansion:<br>
+        <input type="text" name="max_expansion" size="7" value="<?=$max_expansion?>"><br><br>
         <center>
           <input type="hidden" name="id" value="<?=$id?>">
           <input type="hidden" name="must_learn" value="<?=$must_learn?>">

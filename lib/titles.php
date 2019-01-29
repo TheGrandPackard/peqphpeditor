@@ -64,7 +64,7 @@ switch ($action) {
 function get_titles() {
   global $mysql;
 
-  $query = "SELECT id, prefix, suffix FROM titles ORDER BY id";
+  $query = "SELECT * FROM titles ORDER BY id";
   $result = $mysql->query_mult_assoc($query);
 
   return $result;
@@ -97,8 +97,10 @@ function insert_title() {
   $prefix = $_POST['prefix'];
   $suffix = $_POST['suffix'];
   $title_set = $_POST['title_set'];
+  $min_expansion = $_POST['min_expansion'];
+  $max_expansion = $_POST['max_expansion'];
 
-  $query = "INSERT INTO titles (id, skill_id, min_skill_value, max_skill_value, min_aa_points, max_aa_points, `class`, gender, char_id, status, item_id, prefix, suffix, title_set) VALUES ($id, $skill_id, $min_skill_value, $max_skill_value, $min_aa_points, $max_aa_points, $class, $gender, $char_id, $status, $item_id, \"$prefix\", \"$suffix\", $title_set)";
+  $query = "INSERT INTO titles (id, skill_id, min_skill_value, max_skill_value, min_aa_points, max_aa_points, `class`, gender, char_id, status, item_id, prefix, suffix, title_set, min_expansion, max_expansion) VALUES ($id, $skill_id, $min_skill_value, $max_skill_value, $min_aa_points, $max_aa_points, $class, $gender, $char_id, $status, $item_id, \"$prefix\", \"$suffix\", $title_set, $min_expansion, $max_expansion)";
   $mysql->query_no_result($query);
 }
 
@@ -120,8 +122,10 @@ function update_title() {
   $suffix = $_POST['suffix'];
   $title_set = $_POST['title_set'];
   $old_id = $_POST['old_id'];
+  $min_expansion = $_POST['min_expansion'];
+  $max_expansion = $_POST['max_expansion'];
 
-  $query = "UPDATE titles SET id=$id, skill_id=$skill_id, min_skill_value=$min_skill_value, max_skill_value=$max_skill_value, min_aa_points=$min_aa_points, max_aa_points=$max_aa_points, `class`=$class, gender=$gender, char_id=$char_id, status=$status, item_id=$item_id, prefix=\"$prefix\", suffix=\"$suffix\", title_set=$title_set WHERE id=$old_id";
+  $query = "UPDATE titles SET id=$id, skill_id=$skill_id, min_skill_value=$min_skill_value, max_skill_value=$max_skill_value, min_aa_points=$min_aa_points, max_aa_points=$max_aa_points, `class`=$class, gender=$gender, char_id=$char_id, status=$status, item_id=$item_id, prefix=\"$prefix\", suffix=\"$suffix\", title_set=$title_set, min_expansion=$min_expansion, max_expansion=$max_expansion WHERE id=$old_id";
   $mysql->query_no_result($query);
 }
 

@@ -91,15 +91,25 @@
             <tr>
               <td colspan="5">
                 <strong>Prefix:</strong><br>
-                <input type="text" name="prefix" size="70" value="<?=$title['prefix']?>">
+                <input type="text" name="prefix" size="60" value="<?=$title['prefix']?>">
               </td>
             </tr>
             <tr>
               <td colspan="5">
                 <strong>Suffix:</strong><br>
-                <input type="text" name="suffix" size="70" value="<?=$title['suffix']?>">
+                <input type="text" name="suffix" size="60" value="<?=$title['suffix']?>">
               </td>
             </tr>
+            <tr>
+            <td>
+              <strong>Min Expansion</strong><br>
+              <input type="text" name="id" size="7" value="0">
+            </td>
+            <td>
+              <strong>Max Expansion</strong><br>
+              <input type="text" name="status" size="7" value="99">
+            </td>
+          </tr>
           </table><br><br>
           <input type="hidden" name="old_id" value="<?=$title['id']?>">
           <center><input type="submit" value="Update Title">&nbsp;&nbsp;<input type="button" value="Cancel" onClick="history.back();"></center>

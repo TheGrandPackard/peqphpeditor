@@ -15,16 +15,20 @@
 <?if (isset($titles)):?>
       <tr>
         <td align="center" width="10%"><strong>ID</strong></td>
-        <td align="center" width="40%"><strong>Prefix</strong></td>
-        <td align="center" width="40%"><strong>Suffix</strong></td>
+        <td align="center" width="35%"><strong>Prefix</strong></td>
+        <td align="center" width="35%"><strong>Suffix</strong></td>
+        <td align="center" width="5%"><strong>Min Expan.</strong></td>
+        <td align="center" width="5%"><strong>Max Expan.</strong></td>
         <td width="10%">&nbsp;</td>
       </tr>
 <?$x=0;
 foreach($titles as $title):?>
       <tr bgcolor="#<? echo ($x % 2 == 0) ? "BBBBBB" : "AAAAAA";?>">
         <td align="center" width="10%"><?=$title['id']?></td>
-        <td align="center" width="40%"><?=$title['prefix']?></td>
-        <td align="center" width="40%"><?=$title['suffix']?></td>
+        <td align="center" width="35%"><?=$title['prefix']?></td>
+        <td align="center" width="35%"><?=$title['suffix']?></td>
+        <td align="center" width="5%"><?=$title['min_expansion']?></td>
+        <td align="center" width="5%"><?=$title['max_expansion']?></td>
         <td align="right" width="10%"><a href="index.php?editor=titles&title_id=<?=$title['id']?>&action=1"><img src="images/view_tbl.png" width="13" height="13" border="0" title="View Title"></a>&nbsp;<a onClick="return confirm('Really delete title <?=$title['id']?>?');" href="index.php?editor=titles&title_id=<?=$title['id']?>&action=6"><img src="images/remove3.gif" border="0" title="Delete Title"></a></td>
       </tr>
 <?$x++;
