@@ -20,6 +20,10 @@
         <input class="indented" id="classes_required" type="text" name="classes_required" value="65535"/><br/><br/>
         <strong>Probability:</strong>
         <input class="indented" id="probability" type="text" name="probability" value="100"/><br/><br/>
+        <strong>Minimum Expansion:</strong>
+        <input class="indented" id="min_expansion" type="text" name="min_expansion" value="0"/><br/><br/>
+        <strong>Maximum Expansion:</strong>
+        <input class="indented" id="max_expansion" type="text" name="max_expansion" value="99"/><br/><br/>
         <center>
           <input type="hidden" name="mid" value="<?=$mid?>"/>
           <input type="submit" name="submit" value=" Submit "/>

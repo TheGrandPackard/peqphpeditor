@@ -1,4 +1,4 @@
-  <div class="edit_form" style="width: 700px">
+  <div class="edit_form" style="width: 750px">
     <div class="edit_form_header">
       Edit Merchant List: <?=$id?>
     </div>
@@ -15,6 +15,8 @@
             <th>Alt<br/>Curr</th>
             <th>Class<br/>Req</th>
             <th>Probability<br/>Req</th>
+            <th>Minimum<br/>Expansion</th>
+            <th>Maximum<br/>Expansion</th>
           </tr>
 <?$x=1; foreach ($slots as $slot => $v):?>
           <tr>
@@ -27,6 +29,8 @@
             <td align="center"><input type="text" size="3" name="alt_currency_cost<?=$x?>" value="<?=$v['alt_currency_cost']?>"</td>
             <td align="center"><input type="text" size="3" name="classes_required<?=$x?>" value="<?=$v['classes_required']?>"</td>
             <td align="center"><input type="text" size="3" name="probability<?=$x?>" value="<?=$v['probability']?>"</td>
+            <td align="center"><input type="text" size="3" name="min_expansion<?=$x?>" value="<?=$v['min_expansion']?>"</td>
+            <td align="center"><input type="text" size="3" name="max_expansion<?=$x?>" value="<?=$v['max_expansion']?>"</td>
             <input type="hidden" name="slot<?=$x?>" value="<?=$slot?>">
           </tr>
 <?$x++; endforeach?>

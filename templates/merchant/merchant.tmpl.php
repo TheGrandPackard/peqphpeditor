@@ -1,5 +1,5 @@
 <?if ($id != 0):?>
-  <div class="table_container" style="width: 650px;">
+  <div class="table_container" style="width: 750px;">
     <div class="table_header">
       <div style="float:right;">
         <a href="index.php?editor=merchant&z=<?=$currzone?>&zoneid=<?=$currzoneid?>&npcid=<?=$npcid?>&action=8">Temp List</a>&nbsp;
@@ -34,6 +34,8 @@
           <th>Alt<br/>Cur</th>
           <th>Class<br/>Req</th>
           <th>Probability<br/>Req</th>
+          <th>Minimum<br/>Expansion</th>
+          <th>Maximum<br/>Expansion</th>
           <th>&nbsp;</th>
         </tr>
 <?
@@ -106,6 +108,8 @@ $round_sells = round($sells,3);
           <td align="center"><?=$v['alt_currency_cost']?></td>
           <td align="center"><?echo ($v['classes_required'] == 65535) ? "N" : "Y";?></td>
           <td align="center"><?=$v['probability']?></td>
+          <td align="center"><?=$v['min_expansion']?></td>
+          <td align="center"><?=$v['max_expansion']?></td>
           <td align="right" style="padding-right: 10px;">
             <a href="index.php?editor=merchant&z=<?=$currzone?>&zoneid=<?=$currzoneid?>&npcid=<?=$npcid?>&mid=<?=$id?>&slot=<?=$slot?>&id=<?=$v['item']?>&action=3" onClick="return confirm('Really remove this item from the merchant?');"><img src="images/remove.gif" border="0" title="Delete item from Merchantlist"></a>
           </td>
