@@ -42,34 +42,34 @@
 </script>
     
   <form name="global_loot_add" method="post" action="index.php?editor=loot&id=<?=$id?>&action=51">
-    <div class="edit_form">
+    <div class="edit_form" style="width: 750px">
       <div class="edit_form_header">Add Global Loot</div>
       <div class="edit_form_content">
-        <table width="100%" cellpadding="3" cellspacing="0" border="0">
+        <table width="100%">
           <tr>
             <td>
               <strong>ID:</strong><br>
-              <input type="text" size="15" name="id" value="<?=$new_id?>">
+              <input type="text" size="7" name="id" value="<?=$new_id?>">
             </td>
-            <td>&nbsp;</td>
-            <td colspan="2">
+            <td>
               <strong>Description:</strong><br>
-              <input type="text" size="50" name="description" value="">
+              <input type="text" size="80" name="description" value="">
             </td>
-            <td colspan="2">
+          </tr>
+        </table>
+        <table width="100%">
+          <tr>
+            <td>
               <strong>Enabled:</strong><br>
               <select name="enabled" style="width: 80px;">
                 <option value="0">No</option>
                 <option value="1" selected>Yes</option>
               </select>
             </td>
-          </tr>
-          <tr>
             <td>
               <strong>Loottable ID:</strong><br>
-              <input type="text" size="15" name="loottable_id" value="<?=$new_table_id?>">
+              <input type="text" size="7" name="loottable_id" value="<?=$new_table_id?>">
             </td>
-            <td>&nbsp;</td>
             <td>
               <strong>Rare:</strong><br>
               <select name="rare" style="width: 120px;">
@@ -96,7 +96,19 @@
             </td>
           </tr>
           <tr>
-            <td colspan="6">
+            <td>
+              <strong>Min Expansion:</strong><br>
+              <input type="text" size="7" name="min_expansion" value="0">
+            </td>
+            <td>
+              <strong>Max Expansion:</strong><br>
+              <input type="text" size="7" name="max_expansion" value="99">
+            </td>
+          </tr>
+        </table>
+        <table style="width: 730px">
+          <tr>
+            <td>
               <fieldset>
                 <legend><strong>Races</strong></legend>
                 <table width="100%">
@@ -132,12 +144,12 @@
   echo "</table><br>";
 ?>
                 </div>
-                <input type="text" size="117" name="race" value="">
+                <input type="text" size="95" name="race" value="">
               </fieldset><br>
             </td>
           </tr>
           <tr>
-            <td colspan="6">
+            <td>
               <fieldset>
                 <legend><strong>Classes</strong></legend>
                 <table width="100%">
@@ -173,12 +185,12 @@
   echo "</table><br>";
 ?>
                 </div>
-                <input type="text" size="117" name="class" value="">
+                <input type="text" size="95" name="class" value="">
               </fieldset><br>
             </td>
           </tr>
           <tr>
-            <td colspan="6">
+            <td>
               <fieldset>
                 <legend><strong>Bodytypes</strong></legend>
                 <table width="100%">
@@ -214,12 +226,12 @@
   echo "</table><br>";
 ?>
                 </div>
-                <input type="text" size="117" name="bodytype" value="">
+                <input type="text" size="95" name="bodytype" value="">
               </fieldset><br>
             </td>
           </tr>
           <tr>
-            <td colspan="6">
+            <td>
               <fieldset>
                 <legend><strong>Zones</strong></legend>
                 <table width="100%">
@@ -255,7 +267,7 @@
   echo "</table><br>";
 ?>
                 </div>
-                <input type="text" size="117" name="zone" value="">
+                <input type="text" size="95" name="zone" value="">
               </fieldset><br>
             </td>
           </tr>

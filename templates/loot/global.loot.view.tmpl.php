@@ -1,4 +1,4 @@
-  <div class="table_container" style="width: 500px;">
+  <div class="table_container" style="width: 700px;">
     <div class="table_header">
       <table width="100%" cellpadding="0" cellspacing="0">
         <tr>
@@ -14,20 +14,24 @@
     <table class="table_content2" width="100%">
 <?if (isset($global_loot)):?>
       <tr>
-        <td align="center" width="10%"><strong>ID</strong></td>
-        <td align="center" width="40%"><strong>Description</strong></td>
-        <td align="center" width="20%"><strong>Loottable</strong></td>
-        <td align="center" width="20%"><strong>Enabled</strong></td>
-        <td width="10%">&nbsp;</td>
+        <td align="center" width="5%"><strong>ID</strong></td>
+        <td align="center" width="30%"><strong>Description</strong></td>
+        <td align="center" width="15%"><strong>Loottable</strong></td>
+        <td align="center" width="15%"><strong>Enabled</strong></td>
+        <td align="center" width="15%"><strong>Min Expansion</strong></td>
+        <td align="center" width="15%"><strong>Max Expansion</strong></td>
+        <td width="20%">&nbsp;</td>
       </tr>
 <?$x=0;
 foreach($global_loot as $loot):?>
       <tr bgcolor="#<? echo ($x % 2 == 0) ? "BBBBBB" : "AAAAAA";?>">
-        <td align="center" width="10%"><?=$loot['id']?></td>
-        <td align="center" width="40%"><?=$loot['description']?></td>
-        <td align="center" width="20%"><?=$loot['loottable_id']?></td>
-        <td align="center" width="20%"><?=$yesno[$loot['enabled']]?></td>
-        <td align="right" width="10%"><a href="index.php?editor=loot&id=<?=$loot['id']?>&action=55"><img src="images/edit2.gif" width="13" height="13" border="0" title="View Global Loot Entry"></a>&nbsp;<a onClick="return confirm('Really delete Global Loot <?=$loot['id']?>? NOTE: This will NOT delete the associated lootdrops or loottable.');" href="index.php?editor=loot&id=<?=$loot['id']?>&action=54"><img src="images/remove3.gif" border="0" title="Delete Global Loot Entry"></a></td>
+        <td align="center" width="5%"><?=$loot['id']?></td>
+        <td align="center" width="30%"><?=$loot['description']?></td>
+        <td align="center" width="15%"><?=$loot['loottable_id']?></td>
+        <td align="center" width="15%"><?=$yesno[$loot['enabled']]?></td>
+        <td align="center" width="15%"><?=$loot['min_expansion']?></td>
+        <td align="center" width="15%"><?=$loot['max_expansion']?></td>
+        <td align="right" width="20%"><a href="index.php?editor=loot&id=<?=$loot['id']?>&action=55"><img src="images/edit2.gif" width="13" height="13" border="0" title="View Global Loot Entry"></a>&nbsp;<a onClick="return confirm('Really delete Global Loot <?=$loot['id']?>? NOTE: This will NOT delete the associated lootdrops or loottable.');" href="index.php?editor=loot&id=<?=$loot['id']?>&action=54"><img src="images/remove3.gif" border="0" title="Delete Global Loot Entry"></a></td>
       </tr>
 <?$x++;
 endforeach;

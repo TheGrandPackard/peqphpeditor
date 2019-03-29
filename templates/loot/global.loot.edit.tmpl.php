@@ -41,35 +41,35 @@
   }
 </script>
     
-  <form name="global_loot_edit" method="post" action="index.php?editor=loot&id=<?=$id?>&action=53">
-    <div class="edit_form">
+    <div class="edit_form" style="width: 750px">
       <div class="edit_form_header">Edit Global Loot</div>
       <div class="edit_form_content">
-        <table width="100%" cellpadding="3" cellspacing="0" border="0">
+      <form name="global_loot_edit" method="post" action="index.php?editor=loot&id=<?=$id?>&action=53">
+        <table width="100%">
           <tr>
             <td>
               <strong>ID:</strong><br>
-              <input type="text" size="15" value="<?=$id?>" disabled>
+              <input type="text" size="7" value="<?=$id?>" disabled>
             </td>
-            <td>&nbsp;</td>
-            <td colspan="2">
+            <td>
               <strong>Description:</strong><br>
-              <input type="text" size="50" name="description" value="<?=$description?>">
+              <input type="text" size="80" name="description" value="<?=$description?>">
             </td>
-            <td colspan="2">
+          </tr>
+        </table>
+        <table width="100%">
+          <tr>
+            <td>
               <strong>Enabled:</strong><br>
               <select name="enabled" style="width: 80px;">
                 <option value="0"<?echo ($enabled == 0) ? " selected" : "";?>>No</option>
                 <option value="1"<?echo ($enabled == 1) ? " selected" : "";?>>Yes</option>
               </select>
             </td>
-          </tr>
-          <tr>
             <td>
               <strong>Loottable ID:</strong><br>
-              <input type="text" size="15" name="loottable_id" value="<?=$loottable_id?>">
+              <input type="text" size="7" name="loottable_id" value="<?=$loottable_id?>">
             </td>
-            <td>&nbsp;</td>
             <td>
               <strong>Rare:</strong><br>
               <select name="rare" style="width: 120px;">
@@ -96,7 +96,19 @@
             </td>
           </tr>
           <tr>
-            <td colspan="6">
+            <td>
+              <strong>Min Expansion:</strong><br>
+              <input type="text" size="7" name="min_expansion" value="<?=$min_expansion?>">
+            </td>
+            <td>
+              <strong>Max Expansion:</strong><br>
+              <input type="text" size="7" name="max_expansion" value="<?=$max_expansion?>">
+            </td>
+          </tr>
+        </table>
+        <table style="width: 730px">
+          <tr>
+            <td>
               <fieldset>
                 <legend><strong>Races</strong></legend>
                 <table width="100%">
@@ -132,12 +144,12 @@
   echo "</table><br>";
 ?>
                 </div>
-                <input type="text" size="117" name="race" value="<?=$race?>">
+                <input type="text" size="95" name="race" value="<?=$race?>">
               </fieldset><br>
             </td>
           </tr>
           <tr>
-            <td colspan="6">
+            <td>
               <fieldset>
                 <legend><strong>Classes</strong></legend>
                 <table width="100%">
@@ -173,12 +185,12 @@
   echo "</table><br>";
 ?>
                 </div>
-                <input type="text" size="117" name="class" value="<?=$class?>">
+                <input type="text" size="95" name="class" value="<?=$class?>">
               </fieldset><br>
             </td>
           </tr>
           <tr>
-            <td colspan="6">
+            <td>
               <fieldset>
                 <legend><strong>Bodytypes</strong></legend>
                 <table width="100%">
@@ -214,12 +226,12 @@
   echo "</table><br>";
 ?>
                 </div>
-                <input type="text" size="117" name="bodytype" value="<?=$bodytype?>">
+                <input type="text" size="95" name="bodytype" value="<?=$bodytype?>">
               </fieldset><br>
             </td>
           </tr>
           <tr>
-            <td colspan="6">
+            <td>
               <fieldset>
                 <legend><strong>Zones</strong></legend>
                 <table width="100%">
@@ -255,7 +267,7 @@
   echo "</table><br>";
 ?>
                 </div>
-                <input type="text" size="117" name="zone" value="<?=$zone?>">
+                <input type="text" size="95" name="zone" value="<?=$zone?>">
               </fieldset><br>
             </td>
           </tr>
@@ -265,6 +277,6 @@
           <input type="submit" value="Update Global Loot">&nbsp;&nbsp;
           <input type="button" value="Cancel" onClick="history.back();">
         </center>
-      </div>
+      </form>
     </div>
-  </form>
+  </div>

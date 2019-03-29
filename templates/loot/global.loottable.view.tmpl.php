@@ -19,16 +19,14 @@
           <td colspan="2"><strong>Raid:</strong> <?echo ($global_loot['raid'] != "") ? $global_loot['raid'] : "N/A";?></td>
         </tr>
         <tr>
-          <td colspan="6"><strong>Races:</strong> <?echo ($global_loot['race'] != "") ? $race : "ALL";?></td>
+          <td colspan="2"><strong>Races:</strong> <?echo ($global_loot['race'] != "") ? $race : "ALL";?></td>
+          <td colspan="2"><strong>Classes: </strong> <?echo ($global_loot['class'] != "") ? $class : "ALL"?></td>
+          <td colspan="2"><strong>Bodytypes:</strong> <?echo ($global_loot['bodytype'] != "") ? $bodytype : "ALL"?></td>
         </tr>
         <tr>
-          <td colspan="6"><strong>Classes: </strong> <?echo ($global_loot['class'] != "") ? $class : "ALL"?></td>
-        </tr>
-        <tr>
-          <td colspan="6"><strong>Bodytypes:</strong> <?echo ($global_loot['bodytype'] != "") ? $bodytype : "ALL"?></td>
-        </tr>
-        <tr>
-          <td colspan="6"><strong>Zones: </strong> <?echo ($global_loot['zone'] != "") ? $zone : "ALL"?></td>
+          <td colspan="2"><strong>Zones: </strong> <?echo ($global_loot['zone'] != "") ? $zone : "ALL"?></td>
+          <td colspan="2"><strong>Min Expansion:</strong>  <?=$global_loot['min_expansion']?></td>
+          <td colspan="2"><strong>Max Expansion:</strong> <?=$global_loot['max_expansion']?></td>
         </tr>
       </table>
     </div>
